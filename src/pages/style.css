@@ -1,0 +1,45 @@
+.InputFx {
+  display: block;
+  width: 250px;
+  font-size: 22px;
+
+  padding: 5px 0px 5px 30px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  color: #fff;
+  border-style: none;
+}
+label {
+  display: block;
+
+  text-align: center;
+}
+table {
+  border-collapse: collapse;
+  border: 1px solid #ffeca9;
+  margin: 15px auto;
+  border-radius: 10px;
+  font-size: 14px;
+}
+th,
+td {
+  width: 100px;
+  height: 30px;
+  border: 1px solid #cccaca;
+}
+td {
+  text-align: center;
+}
+tr:nth-child(even) {
+  background-color: #c9c6c6;
+}
+th {
+  background-color: #f5c100;
+  color: white;
+}
+input.TheInput{
+  width: 100px;
+}
+.containerBtn{
+  display: flex;
+}

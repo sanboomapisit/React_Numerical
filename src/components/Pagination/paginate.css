@@ -1,0 +1,14 @@
+nav{
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    height: 33px;
+}
+ul{ 
+    list-style-type: none;
+    display: flex;
+}
+button{
+    padding: 5px 13px;
+    margin: 0 2px;
+}

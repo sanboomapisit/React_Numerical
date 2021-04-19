@@ -1,0 +1,18 @@
+version: '3.7'
+services:
+    app:
+        restart: always
+        container_name: react-web
+        build: .
+        volumes:
+            - .:/wabpage
+        ports:
+            - '3000:80'
+    api:
+        container_name: api-web
+        # hostname: api
+        build: ./api
+        restart: always
+        ports:
+            - '5000:5000'
+
