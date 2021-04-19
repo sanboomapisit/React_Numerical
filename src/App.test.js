@@ -17,7 +17,7 @@ it("renders <p> message", () => {
 });
 it("renders <p> message", () => {
   render(<ItemsCramerRule/>);
-  expect(screen.getByText("Result B(x)")).toBeInTheDocument();
+  expect(screen.getByText("Result")).toBeInTheDocument();
 });
 
 // it("renders <p> message", () => {
