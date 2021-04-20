@@ -5,7 +5,7 @@ const Pages = ({title,Items}) => {
         <>
            <Nav>
                 <NavbarContainer>
-                    <NavLogo to="/">Numerical</NavLogo>
+                    <NavLogo to="/">Home</NavLogo>
                 </NavbarContainer>
            </Nav>
            
