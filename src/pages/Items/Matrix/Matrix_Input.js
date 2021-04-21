@@ -6,10 +6,10 @@ const MatrixInput = ({size}) => {
     if(size < 9){
         for(let i = 0 ;i < size;i++){
             for(let j = 0 ; j < size;j++){
-                matrixA.push(<input className='TableMatrix' id={`r${i}c${j}`}></input>)
+                matrixA.push(<input className='TableMatrix' id={`r${i}c${j}`} ></input>)
             }
             matrixA.push(<br/>)
-            matrixB.push(<input className='TableMatrix' id={`B:${i}`}></input>)
+            matrixB.push(<input className='TableMatrix' id={`B:${i}`} ></input>)
         }
     }
     return (
