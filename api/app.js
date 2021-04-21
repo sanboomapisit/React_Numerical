@@ -29,6 +29,7 @@ app.use("/swagger", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
  * @swagger
  * /api/example:
  *  get:
+ *    tags : ["ALL Example"]
  *    description: Use to request all Example
  *    responses:
  *       '200':
@@ -39,6 +40,7 @@ app.use("/swagger", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
  * @swagger
  * /api/example/{name}:
  *  get:
+ *      tags : ["fill you method to get example data"]
  *      parameters:
  *      - name: name
  *        in: path
