@@ -92,7 +92,7 @@ const examples = [
        name:"Bisection",
        latex:"x^3-13",
        Xl:1.5,
-       Xr:2.0
+       Xr:3.0
     },
     {
        name:"Graphical",

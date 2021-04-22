@@ -4,6 +4,9 @@ const app = express();
 const swaggerJsDoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
 const cors = require('cors')
+const jwt = require('jsonwebtoken');
+const bodyParser = require('body-parser');
+const accessTokenSecret = 'banana';
 //Extended: https://swagger.io/specification/#infoObject
 const swaggerOptions = {
     swaggerDefinition: {
@@ -52,7 +55,56 @@ app.use("/swagger", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
  */ 
 
 
+//  const users = [
+//   {
+//       username: 'apisit',
+//       password: '123',
+//       role: 'admin'
+//   }, {
+//       username: 'mom',
+//       password: 'mom',
+//       role: 'member'
+//   }
+// ];
+// app.post('/login', (req, res) => {
+//   // Read username and password from request body
+//   const { username, password } = req.body;
 
+//   // Filter user from the users array by username and password
+//   const user = users.find(u => { return u.username === username && u.password === password });
+
+//   if (user) {
+//       // Generate an access token
+//       const accessToken = jwt.sign({ username: user.username,  role: user.role }, accessTokenSecret);
+
+//       res.json({
+//           accessToken
+//       });
+//   } else {
+//       res.send('Username or password incorrect');
+//   }
+// });
+// const authenticateJWT = (req, res, next) => {
+//   const authHeader = req.headers.authorization;
+
+//   if (authHeader) {
+//       const token = authHeader.split(' ')[1];
+
+//       jwt.verify(token, accessTokenSecret, (err, user) => {
+//           if (err) {
+//               return res.sendStatus(403);
+//           }
+
+//           req.user = user;
+//           next();
+//       });
+//   } else {
+//       res.sendStatus(401);
+//   }
+// };
+// app.get('/api/example', authenticateJWT, (req, res) => {
+//   res.json(books);
+// });
 const logger = (req,res,next)=>{
     console.log(`${req.protocol}://${req.get('host')}${req.originalUrl}`);
     next();
@@ -64,7 +116,8 @@ const PORT = process.env.PORT || 5000 ;
 //     res.json({"hi":"pppt"})
 // })
 
-app.use('/api/example',require('./route/api/Example'));
+// app.use('/api/example',require('./route/api/Example'));
 // set static folder 
+app.use('/api/example',require('./route/api/Example'));
 app.use(express.static(path.join(__dirname,'service')))
 app.listen(PORT,()=> console.log(`Server is running on port ${PORT}`));

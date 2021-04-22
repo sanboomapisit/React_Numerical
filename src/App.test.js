@@ -24,7 +24,6 @@ it("renders <p> message", () => {
 it('should get something', () => {
   const result = Polynomial([[10, 5], [15, 9], [20, 15], [30, 18], [40, 22], 
     [50, 30], [60, 35], [70, 38], [80, 43]],25,2)
-  console.log(result)
   // Assertion
   expect(result).toEqual([-0.00184314, 0.69152941, -0.70098039])
 })
