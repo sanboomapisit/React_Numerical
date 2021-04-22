@@ -60,6 +60,7 @@ const ItemsPolynomial = () => {
         CountM = parseFloat(document.getElementById(`TageM`).value);
         result = Polynomial(ArrayFunction,Xfind,CountM);
         setFindM(Xfind)
+        console.log(result);
         setResult(result)
         setLoading(false);
         }
