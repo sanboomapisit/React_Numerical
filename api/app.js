@@ -4,12 +4,11 @@ const app = express();
 const swaggerJsDoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
 const cors = require('cors')
-const jwt = require('jsonwebtoken');
-const bodyParser = require('body-parser');
-const accessTokenSecret = 'banana';
 //Extended: https://swagger.io/specification/#infoObject
 const swaggerOptions = {
-    swaggerDefinition: {
+    
+  swaggerDefinition: {
+      openapi: "3.0.0",
       info: {
         version: "1.0.0",
         title: "Example API",
@@ -30,13 +29,29 @@ app.use("/swagger", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
 /**
  * @swagger
+ * components:
+ *   securitySchemes:
+ *     ApiKeyAuth:
+ *       type: apiKey
+ *       in: query
+ *       name: token_api
+ *   security:
+ *      -ApiKeyAuth: []
+ * */
+
+/**
+ * @swagger
  * /api/example:
  *  get:
  *    tags : ["ALL Example"]
  *    description: Use to request all Example
+ *    security:
+ *       - ApiKeyAuth: [] 
  *    responses:
  *       '200':
  *         description: A successful response
+ *       '404':
+ *         description: not seccess response
  */
 
 /**
@@ -49,12 +64,17 @@ app.use("/swagger", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
  *        in: path
  *        required: true
  *      description: Use to request Example
+ *      security:
+ *       - ApiKeyAuth: []
  *      responses:
  *        '200':
  *          description: A successful response
- */ 
+ *        '404':
+ *          description: not seccess response
+ */
 
 
+// ..................................................
 //  const users = [
 //   {
 //       username: 'apisit',
@@ -105,6 +125,7 @@ app.use("/swagger", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 // app.get('/api/example', authenticateJWT, (req, res) => {
 //   res.json(books);
 // });
+//............................................
 const logger = (req,res,next)=>{
     console.log(`${req.protocol}://${req.get('host')}${req.originalUrl}`);
     next();

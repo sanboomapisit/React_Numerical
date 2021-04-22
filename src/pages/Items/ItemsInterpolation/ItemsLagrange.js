@@ -57,7 +57,7 @@ const ItemsLagrange = () => {
     
   }
   async function setExelample(){
-    await axios.get("http://localhost:5000/api/example/Lagrange")
+    await axios.get("http://localhost:5000/api/example/Lagrange?token_api=la2UEiUaQD1XttfIX19Ub4t9qx1rcEF1YaenLS1bMZo=")
       .then(function(response){
         setSize(response.data[0].size)
         setSizeInput(response.data[0].size);

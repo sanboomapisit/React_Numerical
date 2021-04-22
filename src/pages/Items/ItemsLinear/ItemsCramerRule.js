@@ -64,7 +64,7 @@ const ItemsCramerRule = () => {
     }
   }
   async function setExelample(){
-    await axios.get("http://localhost:5000/api/example/CramerRule")
+    await axios.get("http://localhost:5000/api/example/CramerRule?token_api=la2UEiUaQD1XttfIX19Ub4t9qx1rcEF1YaenLS1bMZo=")
       .then(function(response){
         setSize(response.data[0].size);
         setSizeInput(response.data[0].size);
@@ -89,13 +89,13 @@ const ItemsCramerRule = () => {
       <BodyContent>
         <ItemFrom>
           <ContainerInput>
-              <label>size matrix</label><Input onChange={OnchangeSize} value={size}></Input>
+              <label>size matrix</label><Input onChange={OnchangeSize} value={size} data-testid="sizeinput"></Input>
             <MatrixInput size={sizeInput}/>
             <div className='containerBtn'><Button onClick={Calculate} >calculate</Button>
-            <Button onClick={setExelample} style={{marginTop:'10px'}}>example</Button></div>
+            <Button onClick={setExelample} style={{marginTop:'10px'}} data-testid="buttonHaHa">example</Button></div>
             
 
-          </ContainerInput>
+          </ContainerInput >
         </ItemFrom>
 
         <ItemFrom>

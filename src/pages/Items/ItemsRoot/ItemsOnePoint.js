@@ -38,7 +38,7 @@ const ItemsOnePoint = () => {
     
   };
   async function Example(){
-    await axios.get("http://localhost:5000/api/example/OnePointIteration")
+    await axios.get("http://localhost:5000/api/example/OnePointIteration?token_api=la2UEiUaQD1XttfIX19Ub4t9qx1rcEF1YaenLS1bMZo=")
       .then(function(response){
         setX0(response.data[0].X0);
         setLatex(response.data[0].latex);

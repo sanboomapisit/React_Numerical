@@ -44,7 +44,7 @@ const Items = () => {
   const currentPosts = posts.slice(indexOfFirstPost,indexOfLastPost);
 
   async function Example(){
-    await axios.get("http://localhost:5000/api/example/Bisection")
+    await axios.get("http://localhost:5000/api/example/Bisection?token_api=la2UEiUaQD1XttfIX19Ub4t9qx1rcEF1YaenLS1bMZo=")
       .then(function(response){
         setXl(response.data[0].Xl);
         setXr(response.data[0].Xr);

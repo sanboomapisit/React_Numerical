@@ -45,7 +45,7 @@ const ItemFalsePosition = () => {
     setLoading(false);
   };
   async function Example(){
-    await axios.get("http://localhost:5000/api/example/FalsePosition")
+    await axios.get("http://localhost:5000/api/example/FalsePosition?token_api=la2UEiUaQD1XttfIX19Ub4t9qx1rcEF1YaenLS1bMZo=")
       .then(function(response){
         setXl(response.data[0].Xl);
         setXr(response.data[0].Xr);

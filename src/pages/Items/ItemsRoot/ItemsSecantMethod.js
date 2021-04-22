@@ -46,7 +46,7 @@ const ItemsSecant = () => {
   const currentPosts = posts.slice(indexOfFirstPost,indexOfLastPost);
   
   async function Example(){
-    await axios.get("http://localhost:5000/api/example/SecantMethod")
+    await axios.get("http://localhost:5000/api/example/SecantMethod?token_api=la2UEiUaQD1XttfIX19Ub4t9qx1rcEF1YaenLS1bMZo=")
       .then(function(response){
         setX0(response.data[0].X0);
         setLatex(response.data[0].latex);

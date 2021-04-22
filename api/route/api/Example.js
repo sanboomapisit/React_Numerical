@@ -3,27 +3,27 @@ const router = express.Router() ;
 const example = require('../../service/Example');
 
 
-router.get('/:name/&key=:token',(req,res)=>{
-    if (req.params.token === "admin" ) {
+router.get('/:name',(req,res)=>{
+    if (req.query.token_api === "la2UEiUaQD1XttfIX19Ub4t9qx1rcEF1YaenLS1bMZo=") {
         let found = example.some(value => value.name === req.params.name)
         if(found){
             res.json(example.filter(value => value.name === req.params.name));
         }
         else{
-            res.status(400).json({ msg : `no examples with name ${req.params.name}`})
+            res.status(404).json({ msg : `no examples with name ${req.params.name}`})
         }
     }
     else{
-        res.status(400).json({ msg : `access deny`})
+        res.status(404).json({ msg : `access deny`})
     }
 })
 
-router.get('/&key=:token',(req,res)=>{
-    if (req.params.token === "member") {
+router.get('/',(req,res)=>{
+    if (req.query.token_api === "la2UEiUaQD1XttfIX19Ub4t9qx1rcEF1YaenLS1bMZo=") {
         res.json(example)
     }
     else{
-        res.status(400).json({ msg : `access deny`})
+        res.status(404).json({ msg : `access deny`})
     }
 })
 

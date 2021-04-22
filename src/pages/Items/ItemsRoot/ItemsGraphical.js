@@ -45,7 +45,7 @@ const Items = () => {
 
   
   async function Example(){
-    await axios.get("http://localhost:5000/api/example/Graphical")
+    await axios.get("http://localhost:5000/api/example/Graphical?token_api=la2UEiUaQD1XttfIX19Ub4t9qx1rcEF1YaenLS1bMZo=")
       .then(function(response){
         setStart(response.data[0].start);
         setFinish(response.data[0].finish);

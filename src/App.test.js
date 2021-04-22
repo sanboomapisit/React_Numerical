@@ -1,5 +1,5 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { render, screen ,fireEvent} from "@testing-library/react";
 import HeroSection from "./components/HeroSection/index";
 import "@testing-library/jest-dom";
 import ItemsCramerRule from "./pages/Items/ItemsLinear/ItemsCramerRule"
@@ -27,7 +27,17 @@ it('should get something', () => {
   // Assertion
   expect(result).toEqual([-0.00184314, 0.69152941, -0.70098039])
 })
-
+//  it('test button change sizematrix',()=>{
+//   let { getByTestId } = render(<ItemsCramerRule />); 
+//   fireEvent.click(getByTestId('buttonHaHa'));
+//   expect(getByTestId('sizeinput')).toHaveDisplayValue('3');
+//  })
+//  it('test button',()=>{
+//   it('should be enabled', () => {
+//     const { getByTestId } = render(<TestElements />);
+//     expect(getByTestId('button-up')).not.toHaveAttribute('disabled')
+//   });
+//  })
 
 
 // it("renders <p> message", () => {
