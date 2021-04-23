@@ -40,7 +40,7 @@ const ItemFalsePosition = () => {
     const text = algebraObj.toMath();
     let output = text.replace('exp*x','exp(x)')
     console.log(output);
-    result = False_Position(output, parseFloat(xl), parseFloat(xr));
+    result = False_Position(output,parseFloat(xl),parseFloat(xr));
     setPosts(result);
     setLoading(false);
   };

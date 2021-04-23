@@ -480,6 +480,7 @@ export const Lagrange =(Xin,fxin,findX)=>{
 const Spline = require('cubic-spline');
 export const SplineService =(Xin,Yin,xFind)=>{
   const spline = new Spline(Xin, Yin);
+  Spline
   let r = spline.at(xFind);
   return r.toFixed(8);
 }

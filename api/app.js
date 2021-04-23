@@ -75,17 +75,17 @@ app.use("/swagger", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
 
 // ..................................................
-//  const users = [
-//   {
-//       username: 'apisit',
-//       password: '123',
-//       role: 'admin'
-//   }, {
-//       username: 'mom',
-//       password: 'mom',
-//       role: 'member'
-//   }
-// ];
+ const users = [
+  {
+      username: 'apisit',
+      password: '123',
+      role: 'admin'
+  }, {
+      username: 'mom',
+      password: 'mom',
+      role: 'member'
+  }
+];
 // app.post('/login', (req, res) => {
 //   // Read username and password from request body
 //   const { username, password } = req.body;
@@ -125,7 +125,7 @@ app.use("/swagger", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 // app.get('/api/example', authenticateJWT, (req, res) => {
 //   res.json(books);
 // });
-//............................................
+// ............................................
 const logger = (req,res,next)=>{
     console.log(`${req.protocol}://${req.get('host')}${req.originalUrl}`);
     next();

@@ -4,6 +4,7 @@ import HeroSection from "./components/HeroSection/index";
 import "@testing-library/jest-dom";
 import ItemsCramerRule from "./pages/Items/ItemsLinear/ItemsCramerRule"
 import { Polynomial } from './services/service'
+
 // it("renders <h> message", () => {
 //   render(<HeroSection/>);
 //   expect(screen.getByText("Numerrical you Know?")).toBeInTheDocument();
@@ -27,6 +28,7 @@ it('should get something', () => {
   // Assertion
   expect(result).toEqual([-0.00184314, 0.69152941, -0.70098039])
 })
+
 //  it('test button change sizematrix',()=>{
 //   let { getByTestId } = render(<ItemsCramerRule />); 
 //   fireEvent.click(getByTestId('buttonHaHa'));
