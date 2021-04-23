@@ -73,59 +73,6 @@ app.use("/swagger", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
  *          description: not seccess response
  */
 
-
-// ..................................................
- const users = [
-  {
-      username: 'apisit',
-      password: '123',
-      role: 'admin'
-  }, {
-      username: 'mom',
-      password: 'mom',
-      role: 'member'
-  }
-];
-// app.post('/login', (req, res) => {
-//   // Read username and password from request body
-//   const { username, password } = req.body;
-
-//   // Filter user from the users array by username and password
-//   const user = users.find(u => { return u.username === username && u.password === password });
-
-//   if (user) {
-//       // Generate an access token
-//       const accessToken = jwt.sign({ username: user.username,  role: user.role }, accessTokenSecret);
-
-//       res.json({
-//           accessToken
-//       });
-//   } else {
-//       res.send('Username or password incorrect');
-//   }
-// });
-// const authenticateJWT = (req, res, next) => {
-//   const authHeader = req.headers.authorization;
-
-//   if (authHeader) {
-//       const token = authHeader.split(' ')[1];
-
-//       jwt.verify(token, accessTokenSecret, (err, user) => {
-//           if (err) {
-//               return res.sendStatus(403);
-//           }
-
-//           req.user = user;
-//           next();
-//       });
-//   } else {
-//       res.sendStatus(401);
-//   }
-// };
-// app.get('/api/example', authenticateJWT, (req, res) => {
-//   res.json(books);
-// });
-// ............................................
 const logger = (req,res,next)=>{
     console.log(`${req.protocol}://${req.get('host')}${req.originalUrl}`);
     next();
