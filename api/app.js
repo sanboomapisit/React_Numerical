@@ -37,7 +37,7 @@ app.use("/swagger", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
  *       name: token_api
  *   security:
  *      -ApiKeyAuth: []
- * */
+ */
 
 /**
  * @swagger
@@ -79,12 +79,7 @@ const logger = (req,res,next)=>{
 app.use(cors())
 app.use(logger);
 const PORT = process.env.PORT || 5000 ;
-// app.get('/',(req,res)=>{
-//     res.json({"hi":"pppt"})
-// })
 
-// app.use('/api/example',require('./route/api/Example'));
-// set static folder 
 app.use('/api/example',require('./route/api/Example'));
 app.use(express.static(path.join(__dirname,'service')))
 app.listen(PORT,()=> console.log(`Server is running on port ${PORT}`));
