@@ -31,10 +31,12 @@ const Items = () => {
   };
   const submited = () => {
     let result = 0;
-    const latexinput = latex.replace('\\exp','exp')
+    console.log(latex)  
+    const p = latex.replaceAll('ln','log')
+    const latexinput = p.replaceAll('\\exp','exp')
     const algebraObj = new AlgebraLatex().parseLatex(latexinput);
     const text = algebraObj.toMath();
-    let output = text.replace('exp*x','exp(x)')
+    let output = text.replaceAll('exp*x','exp(x)')
     result = Bisection(output, parseFloat(xl), parseFloat(xr));
     setPosts(result);
     setLoading(false);

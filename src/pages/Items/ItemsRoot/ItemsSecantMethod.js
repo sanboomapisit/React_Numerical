@@ -32,7 +32,8 @@ const ItemsSecant = () => {
 
   const submited = () => {
     let result = 0;
-    let latexinput = latex.replace('\\exp','exp')
+    const p = latex.replaceAll('ln','log')
+    let latexinput = p.replace('\\exp','exp')
     let algebraObj = new AlgebraLatex().parseLatex(latexinput);
     let text = algebraObj.toMath();
     let output = text.replace('exp*x','exp(x)')

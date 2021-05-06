@@ -59,8 +59,8 @@ const Poster = ({ colomn=[], loading, Attribute,indexOfFirstPost,postsPerPage ,s
         tageEr = [] ;
         tageX = [] ;
         for(let i = 0 ; i < ((colomn[0].length)/2);i++){
-          tageX.push(<td>{(colomn[j][i]).toFixed(3)}</td>) ; 
-          tageEr.push(<td>{(colomn[j][size+i]).toFixed(3)}</td>) ;
+          tageX.push(<td>{(colomn[j][i]).toFixed(5)}</td>) ; 
+          tageEr.push(<td>{(colomn[j][size+i]).toFixed(5)}</td>) ;
         }
         rows = <tr><td>{indexOfFirstPost+1+j}</td>{tageX}{tageEr}</tr>
         child.push(rows);

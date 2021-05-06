@@ -129,7 +129,6 @@ const ItemsGaussSeidel = () => {
                 currentPosts.length>0 && <Table style={{fontSize:'10px'}}colomn={currentPosts} loading={loading} Attribute={'Jabobi'} indexOfFirstPost={indexOfFirstPost} postsPerPage={postsPerPage} size={sizeInput}/>
               }
               
-            
             </table>
             <Pagination postsPerPage={postsPerPage} totalPosts={posts.length} paginate={paginate}/>
           </ContainerInput>

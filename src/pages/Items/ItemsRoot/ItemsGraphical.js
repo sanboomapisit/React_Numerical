@@ -33,7 +33,8 @@ const Items = () => {
   
   const submited = () => {
     let result = 0;
-    const latexinput = latex.replace('\\exp','exp')
+    const p = latex.replaceAll('ln','log')
+    const latexinput = p.replace('\\exp','exp')
     const algebraObj = new AlgebraLatex().parseLatex(latexinput);
     const text = algebraObj.toMath();
     let output = text.replace('exp*x','exp(x)')
